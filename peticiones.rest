@@ -1,0 +1,67 @@
+GET http://localhost:3000/api/products/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2Zjk5MmI5M2Q3MiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjU3NTIzNn0.xuuk7E1PUvNpWxWAEFWFoKasuR7xGuYIctIrzmEreus
+
+###
+
+GET http://localhost:3000/api/products/activos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2Zjk5MmI5M2Q3MiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjU3NTIzNn0.xuuk7E1PUvNpWxWAEFWFoKasuR7xGuYIctIrzmEreus
+
+###
+GET http://localhost:3000/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2Zjk5MmI5M2Q3MiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjU3NTIzNn0.xuuk7E1PUvNpWxWAEFWFoKasuR7xGuYIctIrzmEreus
+
+###
+POST http://127.0.0.1:3000/api/products
+Content-Type: application/json
+
+{
+     "name": "Thermomix", 
+     "description": "Cocina del carajo", 
+     "price": 1250, 
+     "department": "cocina", 
+     "available": true, 
+     "stock": 300 
+}
+
+###
+GET  http://127.0.0.1:3000/api/products/price/50/max/300
+
+
+###
+POST http://127.0.0.1:3000/api/products
+Content-Type: application/json
+
+{
+     "name": "tomates",
+     "description": "tomates calientes",
+     "price": 11
+}
+
+###
+POST http://127.0.0.1:3000/api/users/register
+Content-Type: application/json
+
+{
+     "name": "Pepe",
+     "email": "Juan@gmail.com",
+     "password": "12345"
+}
+
+###
+POST http://127.0.0.1:3000/api/users/login
+Content-Type: application/json
+
+{
+     "email": "Juan@gmail.com",
+     "password": "12345"
+}
+
+
+###
+PUT http://127.0.0.1:3000/api/products/add_cart
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2Zjk5MmI5M2Q3MiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjU3NjU0N30.rT-UPjaR2fAlESczLcNxI0aiM8zOj1s0MBcvxk_53is
+
+{
+     "product_id": "660fc8fa605e9e97e6cd3a65"
+}
