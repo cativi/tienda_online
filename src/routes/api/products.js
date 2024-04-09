@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const Product = require('../../models/product.model');
 const User = require('./../../models/user.model');
-const { validate, checkProductId } = require('../../helpers/middlewares');
+const { validate, checkProductId, checkToken } = require('../../helpers/middlewares');
 const productSchema = require('./../../schemas/product.schema');
 
 
@@ -67,8 +67,15 @@ router.get('/:department', async (req, res) => {
 
 router.post('/', validate(productSchema), async (req, res) => {
     // req.body: name, description, price, department, available, stock
+    // El checktoken de api/products nos da accesso a req.user y lo guardamos en req.body.creator
+    // Modificamos el body par obtener el id del creador
+    req.body.creator = req.user._id;
+    // Creamos el nuevo producto
     const newProduct = await Product.create(req.body);
-    res.json(newProduct);
+    // Recuperar el producto creado a partir de su ID
+    const product = await Product.findById(newProduct._id)
+        .populate('creator', 'name email -_id');
+    res.json(product);
 });
 
 router.put('/add_cart', checkProductId, async (req, res) => {

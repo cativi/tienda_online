@@ -8,19 +8,21 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2
 
 ###
 GET http://localhost:3000/api/users/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2Zjk5MmI5M2Q3MiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjU3NTIzNn0.xuuk7E1PUvNpWxWAEFWFoKasuR7xGuYIctIrzmEreus
+
 
 ###
 POST http://127.0.0.1:3000/api/products
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTRmOWU4MDRmZjQ4ZjNjNDU3Y2EwZiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjY1MDc2Nn0.cZ5FqrXRIkNvaXFyzg1Cs5e2iCb95I6LeXGIfbLdmQY
 
 {
-     "name": "Thermomix", 
-     "description": "Cocina del carajo", 
-     "price": 1250, 
-     "department": "cocina", 
+     "name": "Fresas", 
+     "description": "Fresa del campo", 
+     "price": 15, 
+     "department": "hogar", 
      "available": true, 
-     "stock": 300 
+     "stock": 50
+
 }
 
 ###
@@ -38,12 +40,12 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:3000/api/users/register
+POST https://tienda-online-igid.onrender.com/api/users/register
 Content-Type: application/json
 
 {
-     "name": "Pepe",
-     "email": "Juan@gmail.com",
+     "name": "Pepito",
+     "email": "pepito@gmail.com",
      "password": "12345"
 }
 
@@ -52,7 +54,7 @@ POST http://127.0.0.1:3000/api/users/login
 Content-Type: application/json
 
 {
-     "email": "Juan@gmail.com",
+     "email": "pepito@gmail.com",
      "password": "12345"
 }
 
@@ -65,3 +67,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTNhMzE3M2ZlZTY2
 {
      "product_id": "660fc8fa605e9e97e6cd3a65"
 }
+
+
+###
+GET http://localhost:3000/api/users/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MTRmOWU4MDRmZjQ4ZjNjNDU3Y2EwZiIsInJvbGUiOiJzdGFmZiIsImlhdCI6MTcxMjY1MTcwMH0.C-JHoXJs6Hb_hMNOXvadYoMaVGXnkzpr4Rk0ljzVRb0
